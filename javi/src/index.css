@@ -7,7 +7,6 @@ html {
 }
 
 body {
-
   background-color: whitesmoke;
   color: #000000;
   font-family: cursive;
@@ -40,18 +39,26 @@ a {
   /* border: 2px solid white; */
   border-radius: 50%;
   overflow: hidden;
-  margin-left: 2px;
   margin-right: 5px;
-  /* padding: -5px; */
   margin-top: 7px;
-  /* margin-top: 5px; */
 }
 
-.user-box{
-  padding: 0px 5px 0px 5px ;
+.user-box {
+  padding: 0px 10px;
+  margin: -2.5px 20px;
 }
 
 .user-box:hover {
   background-color: gray;
   border-radius: 10px;
+}
+
+.login-btn {
+  background-color: tomato;
+  border-radius: 20px;
+}
+
+.login-btn:hover {
+  background-color: red;
+  border-radius: 20px;
 }

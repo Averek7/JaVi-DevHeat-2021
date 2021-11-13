@@ -60,16 +60,19 @@ const MyNavbar = () => {
         <Navbar.Brand href="#home">FIT-HUB</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {!userName ? (
-          <Nav.Link
-            onClick={handleAuth}
-            style={{
-              color: "white",
-              backgroundColor: "grey",
-              borderRadius: "20px",
-            }}
-          >
-            <i class="far fa-user" style={{ paddingRight: "5px" }}></i>LOGIN
-          </Nav.Link>
+          <div className="login-btn">
+            <Nav.Link
+              onClick={handleAuth}
+              style={{
+                color: "white",
+                // backgroundColor: "grey",
+                // borderRadius: "20px",
+              }}
+            >
+              <i class="far fa-user" style={{ paddingRight: "5px" }}></i>
+              LOGIN
+            </Nav.Link>
+          </div>
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
