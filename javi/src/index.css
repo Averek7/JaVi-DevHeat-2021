@@ -7,6 +7,11 @@ html {
 }
 
 body {
+<<<<<<< HEAD
+
+=======
+>>>>>>> c9714db8b2d57afe7c81b4483c79f8304ab035ac
+  background-color: whitesmoke;
   color: black;
 
   font-family: Avenir-Roman, cursive;
@@ -19,6 +24,10 @@ a {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> c9714db8b2d57afe7c81b4483c79f8304ab035ac
 @media only screen and (min-width: 768px) {
   body {
     font-size: 15px;
@@ -33,6 +42,9 @@ a {
   body {
     font-size: 14px;
   }
+<<<<<<< HEAD
+}
+=======
 }
 
 .profile-img {
@@ -68,3 +80,4 @@ a {
 .user-box:hover {
   background-color: royalblue;
 }
+>>>>>>> c9714db8b2d57afe7c81b4483c79f8304ab035ac
