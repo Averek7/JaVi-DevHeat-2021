@@ -5,7 +5,7 @@ const Home = () => {
 
     return (
         <div>
-        <button>LogOut</button>
+            Hello World !
         </div>
     )
 }
