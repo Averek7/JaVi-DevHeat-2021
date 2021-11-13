@@ -76,6 +76,7 @@ a {
 
 .main-footer {
   /* margin-top: 20px; */
+  /* font-size: 15px; */
   border-radius: 20px 20px 0px 0px;
   padding-top: 15px;
   display: flex;
@@ -106,4 +107,33 @@ a {
 .main-footer a:hover {
   text-decoration: none;
   color: yellow;
+}
+
+.block {
+  /* background-color: lightgrey; */
+  margin: 50px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  /* transform: rotate(5deg); */
+}
+
+.block-photo {
+  /* background-color: purple; */
+  border-radius: 20px;
+  padding: 10px;
+  margin: 0px 10px;
+}
+.block-description {
+  /* background-color: pink; */
+  justify-content: center;
+  transform: translate(0, 50px);
+}
+
+.scroll-page img {
+  border-radius: 50px;
+}
+
+.scroll-page li {
+  margin-top: 5px;
 }

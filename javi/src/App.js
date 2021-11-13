@@ -11,10 +11,11 @@ function App() {
   return (
     <Router>
       <MyNavbar />
-      <Caro />
-      <Routes>
+      {/* <Caro /> */}
+      <Home />
+      {/* <Routes>
         <Route exact path="\home" element={<Home />} />
-      </Routes>
+      </Routes> */}
       <MyFooter />
     </Router>
   );
