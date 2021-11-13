@@ -7,8 +7,7 @@ html {
 }
 
 body {
-
-  background-color: whitesmoke;
+  background-color: #bdc3c7;
   color: #000000;
   font-family: cursive;
   margin: 0;
@@ -40,18 +39,71 @@ a {
   /* border: 2px solid white; */
   border-radius: 50%;
   overflow: hidden;
-  margin-left: 2px;
   margin-right: 5px;
-  /* padding: -5px; */
   margin-top: 7px;
-  /* margin-top: 5px; */
 }
 
-.user-box{
-  padding: 0px 5px 0px 5px ;
+.user-box {
+  padding: 0px 10px;
+  margin: -2.5px 20px;
 }
 
 .user-box:hover {
   background-color: gray;
   border-radius: 10px;
+}
+
+.login-btn {
+  background-color: red;
+  border-radius: 20px;
+}
+
+.login-btn:hover {
+  background-color: tomato;
+  border-radius: 20px;
+}
+
+.logout-btn {
+  background-color: red;
+  border-radius: 20px;
+  padding-left: 4px;
+}
+
+.logout-btn:hover {
+  background-color: tomato;
+  border-radius: 20px;
+}
+
+.main-footer {
+  /* margin-top: 20px; */
+  border-radius: 20px 20px 0px 0px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  background-color: #130f40;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.strip {
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+
+.main-footer li {
+  list-style: none;
+}
+.main-footer h4 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.main-footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-footer a:hover {
+  text-decoration: none;
+  color: yellow;
 }

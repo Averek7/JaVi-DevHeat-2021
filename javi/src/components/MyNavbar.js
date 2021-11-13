@@ -57,11 +57,35 @@ const MyNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">FIT-HUB</Navbar.Brand>
+        <Navbar.Brand
+          href="#home"
+          style={{
+            fontSize: "32px",
+            fontWeight: "bold",
+            fontFamily: "monospace",
+            padding: "5px 15px",
+            margin: "-5px",
+            background: "purple",
+            marginRight: "10px",
+            borderRadius: "20px 50px",
+          }}
+        >
+          <i class="fas fa-heartbeat fa-fw"></i>
+          FIT-HUB
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {!userName ? (
-
-          <Nav.Link onClick={handleAuth} style={{ color: "white", backgroundColor: "grey", borderRadius: "20px"}}><i class="far fa-user" style={{paddingRight: "5px"}}></i>LOGIN</Nav.Link>
+          <div className="login-btn">
+            <Nav.Link
+              onClick={handleAuth}
+              style={{
+                color: "white",
+              }}
+            >
+              <i class="far fa-user" style={{ paddingRight: "5px" }}></i>
+              LOGIN
+            </Nav.Link>
+          </div>
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -79,9 +103,18 @@ const MyNavbar = () => {
                     src={userPhoto}
                     className="profile-img"
                   />
-                  <Badge bg="danger">{userName}</Badge>
+                  <Badge bg="success">{userName}</Badge>
                 </div>
-                <Nav.Link onClick={handleAuth}>LogOut</Nav.Link>
+                <div className="logout-btn">
+                  <Nav.Link
+                    onClick={handleAuth}
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    LOGOUT <i class="fa-fw fas fa-sign-out-alt"></i>
+                  </Nav.Link>
+                </div>
               </>
             </Nav>
           </Navbar.Collapse>
