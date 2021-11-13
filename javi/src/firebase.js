@@ -1,17 +1,16 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCOdMiOERN_4dFBtyNery0R4IpCeqSkLGw",
-  authDomain: "javi-9f91b.firebaseapp.com",
-  projectId: "javi-9f91b",
-  storageBucket: "javi-9f91b.appspot.com",
-  messagingSenderId: "280654418660",
-  appId: "1:280654418660:web:10bfffbc59645e07af92f1",
-  measurementId: "G-0DC327H30K",
+  apiKey: "AIzaSyBIaeNGqJPgt4UGMt0yViciJ_w7mNIqidI",
+  authDomain: "javi-development.firebaseapp.com",
+  projectId: "javi-development",
+  storageBucket: "javi-development.appspot.com",
+  messagingSenderId: "326962623335",
+  appId: "1:326962623335:web:34be47ec788bd836f175c2"
 };
 
-const firebaseApp = firebase.initalizeApp(firebaseConfig);
-const db = firebaseApp.firestore;
+const app = firebase.initializeApp(firebaseConfig);
+const db = app.firestore;
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 const storage = firebase.storage();
