@@ -3,12 +3,12 @@ import { Carousel } from "react-bootstrap";
 
 const Caro = () => {
   return (
-    <div style={{ display: "block", height: 800, padding: 30 }}>
-      <Carousel className="caro">
+    <div className="caro">
+      <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/500/300"
+            src="https://picsum.photos/600/200"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -19,7 +19,7 @@ const Caro = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/600/300"
+            src="https://picsum.photos/600/200"
             alt="Second slide"
           />
 
@@ -31,7 +31,7 @@ const Caro = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/400/300"
+            src="https://picsum.photos/600/200"
             alt="Third slide"
           />
 
