@@ -1,6 +1,5 @@
-
 import React, { useEffect } from "react";
-import { Navbar, Nav, Container, Figure } from "react-bootstrap";
+import { Navbar, Nav, Container, Figure, Badge } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../firebase";
@@ -23,7 +22,6 @@ const MyNavbar = () => {
         history("/home");
       }
     });
-    // eslint-disable-next-line
   }, [userName]);
 
   const handleAuth = () => {
@@ -32,7 +30,6 @@ const MyNavbar = () => {
         .signInWithPopup(provider)
         .then((result) => {
           setUser(result.user);
-          history("/home");
         })
         .catch((error) => {
           alert(error.message);
@@ -60,30 +57,32 @@ const MyNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="/home">FIT-HUB</Navbar.Brand>
+        <Navbar.Brand href="#home">FIT-HUB</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {!userName ? (
-          <Nav.Link onClick={handleAuth} style={{ color: "white" }}>
-            LOGIN
-          </Nav.Link>
+
+          <Nav.Link onClick={handleAuth} style={{ color: "white", backgroundColor: "grey", borderRadius: "20px"}}><i class="far fa-user" style={{paddingRight: "5px"}}></i>LOGIN</Nav.Link>
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/dashboard">Dashboard</Nav.Link>
               <Nav.Link href="/chatroom">Chat Room</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
-              <Nav.Link href="/aboutus">About Us</Nav.Link>
+              <Nav.Link href="/about">About Us</Nav.Link>
             </Nav>
             <Nav>
-              <Figure>
-                <Figure.Image
-                  width={25}
-                  height={25}
-                  alt={userName}
-                  src={userPhoto}
-                />
+              <>
+                <div className="user-box">
+                  <Figure.Image
+                    width={30}
+                    height={30}
+                    src={userPhoto}
+                    className="profile-img"
+                  />
+                  <Badge bg="danger">{userName}</Badge>
+                </div>
                 <Nav.Link onClick={handleAuth}>LogOut</Nav.Link>
-              </Figure>
+              </>
             </Nav>
           </Navbar.Collapse>
         )}

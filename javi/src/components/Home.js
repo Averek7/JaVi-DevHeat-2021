@@ -1,12 +1,12 @@
-import React from 'react'
-import Caro from './Caro'
+import React from "react";
+import Caro from "./Caro";
 
 const Home = () => {
+  return (
+    <>
+      <Caro />
+    </>
+  );
+};
 
-    return (
-        <div>
-        <Caro />
-        </div>
-    )
-}
 export default Home;
