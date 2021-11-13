@@ -22,6 +22,7 @@ const MyNavbar = () => {
         history("/home");
       }
     });
+    // eslint-disable-next-line
   }, [userName]);
 
   const handleAuth = () => {
