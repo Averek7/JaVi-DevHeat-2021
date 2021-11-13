@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./components/Home";
 import MyNavbar from "./components/MyNavbar.js";
 import Caro from "./components/Caro.js";
-// import { Alert } from "react-bootstrap";
+import MyFooter from "./components/MyFooter.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="\home" element={<Home />} />
       </Routes>
+      <MyFooter />
     </Router>
   );
 }

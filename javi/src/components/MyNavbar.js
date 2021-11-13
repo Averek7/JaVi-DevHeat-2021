@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Navbar, Nav, Container, Figure } from "react-bootstrap";
+import { Navbar, Nav, Container, Figure, Badge } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../firebase";
@@ -58,6 +58,11 @@ const MyNavbar = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="#home">FIT-HUB</Navbar.Brand>
+        {/* <Nav.Link href="#home">
+          <h3>
+            <Badge bg="warning">FitHub</Badge>
+          </h3>
+        </Nav.Link> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
