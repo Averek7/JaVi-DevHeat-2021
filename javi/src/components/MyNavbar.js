@@ -19,7 +19,7 @@ const MyNavbar = () => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUser(user);
-        history('/home');
+        history("/home");
       }
     });
   }, [userName]);
@@ -66,20 +66,25 @@ const MyNavbar = () => {
             <Nav.Link href="#aboutus">About Us</Nav.Link>
           </Nav>
           <Nav>
-          {!userName ? (
-            <Nav.Link onClick={handleAuth}>Login</Nav.Link>
-          ) : (
-
-            <Figure>
-              <Figure.Image
-                width={25}
-                height={25}
-                alt={userName}
-                src={userPhoto}
-              />
-              <Nav.Link onClick={handleAuth}>LogOut</Nav.Link>
-            </Figure>
-          )}
+            {!userName ? (
+              <Nav.Link onClick={handleAuth}>Login</Nav.Link>
+            ) : (
+              <>
+                {/* <Figure> */}
+                <div className="user-box">
+                  <Figure.Image
+                    width={30}
+                    height={30}
+                    alt={userName}
+                    src={userPhoto}
+                    className="profile-img"
+                  />
+                  {/* </Figure> */}
+                  <Nav.Link className="navbar-usrname">{userName}</Nav.Link>
+                </div>
+                <Nav.Link onClick={handleAuth}>LogOut</Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
