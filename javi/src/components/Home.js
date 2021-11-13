@@ -1,11 +1,12 @@
 import React from 'react'
+import Caro from './Caro'
 
 const Home = () => {
    
 
     return (
         <div>
-        <button>LogOut</button>
+        <Caro />
         </div>
     )
 }
