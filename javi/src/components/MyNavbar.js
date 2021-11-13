@@ -58,40 +58,42 @@ const MyNavbar = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="#home">FIT-HUB</Navbar.Brand>
-        {/* <Nav.Link href="#home">
-          <h3>
-            <Badge bg="warning">FitHub</Badge>
-          </h3>
-        </Nav.Link> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#dashboard">Dashboard</Nav.Link>
-            <Nav.Link href="#chatroom">Chat Room</Nav.Link>\
-            <Nav.Link href="#aboutus">About Us</Nav.Link>
-          </Nav>
-          <Nav>
-            {!userName ? (
-              <Nav.Link onClick={handleAuth}>Login</Nav.Link>
-            ) : (
+        {!userName ? (
+          <Nav.Link
+            onClick={handleAuth}
+            style={{
+              color: "white",
+              backgroundColor: "grey",
+              borderRadius: "20px",
+            }}
+          >
+            <i class="far fa-user" style={{ paddingRight: "5px" }}></i>LOGIN
+          </Nav.Link>
+        ) : (
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+              <Nav.Link href="/chatroom">Chat Room</Nav.Link>
+              <Nav.Link href="/contact">Contact Us</Nav.Link>
+              <Nav.Link href="/about">About Us</Nav.Link>
+            </Nav>
+            <Nav>
               <>
-                {/* <Figure> */}
                 <div className="user-box">
                   <Figure.Image
                     width={30}
                     height={30}
-                    alt={userName}
                     src={userPhoto}
                     className="profile-img"
                   />
-                  {/* </Figure> */}
-                  <Nav.Link className="navbar-usrname">{userName}</Nav.Link>
+                  <Badge bg="danger">{userName}</Badge>
                 </div>
                 <Nav.Link onClick={handleAuth}>LogOut</Nav.Link>
               </>
-            )}
-          </Nav>
-        </Navbar.Collapse>
+            </Nav>
+          </Navbar.Collapse>
+        )}
       </Container>
     </Navbar>
   );
