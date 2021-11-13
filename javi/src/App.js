@@ -5,15 +5,15 @@ import MyNavbar from "./components/MyNavbar.js";
 import MyFooter from "./components/MyFooter.js";
 // import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Caro from "./components/Caro";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <Router>
       <MyNavbar />
-      <Caro />
       <Routes>
-        <Route exact path="\home" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/home/contact" element={<Contact />} />
       </Routes>
       <MyFooter />
     </Router>

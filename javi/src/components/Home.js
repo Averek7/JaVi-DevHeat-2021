@@ -2,7 +2,9 @@ import React from "react";
 import Caro from "./Caro";
 
 const Home = () => {
-  return <>Hello</>;
+  return(
+    <Caro />
+  );
 };
 
 export default Home;
