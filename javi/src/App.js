@@ -5,17 +5,18 @@ import MyNavbar from "./components/MyNavbar.js";
 import MyFooter from "./components/MyFooter.js";
 // import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Caro from "./components/Caro";
+import Contact from "./components/Contact";
+import ChatRoom from "./components/ChatRoom";
 
 function App() {
   return (
     <Router>
       <MyNavbar />
-      {/* <Caro /> */}
-      <Home />
-      {/* <Routes>
-        <Route exact path="\home" element={<Home />} />
-      </Routes> */}
+      <Routes>
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/home/contact" element={<Contact />} />
+        <Route exact path="/home/chatroom" element={<ChatRoom />} />
+      </Routes>
       <MyFooter />
     </Router>
   );

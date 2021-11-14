@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Navbar, Nav, Container, Figure, Badge } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { auth, provider } from "../firebase";
 import {
   selectUserName,
@@ -22,6 +22,7 @@ const MyNavbar = () => {
         history("/home");
       }
     });
+    // eslint-disable-next-line
   }, [userName]);
 
   const handleAuth = () => {
@@ -58,7 +59,7 @@ const MyNavbar = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand
-          href="#home"
+          href="/home"
           style={{
             fontSize: "32px",
             fontWeight: "bold",
@@ -89,10 +90,10 @@ const MyNavbar = () => {
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="/chatroom">Chat Room</Nav.Link>
-              <Nav.Link href="/contact">Contact Us</Nav.Link>
-              <Nav.Link href="/about">About Us</Nav.Link>
+              <Nav.Link as={Link} to="/home/dashboard">Dashboard</Nav.Link>
+              <Nav.Link as={Link} to="/home/chatroom">Chat Room</Nav.Link>
+              <Nav.Link as={Link} to="/home/contact">Contact Us</Nav.Link>
+              <Nav.Link as={Link} to="/home/about">About Us</Nav.Link>
             </Nav>
             <Nav>
               <>
