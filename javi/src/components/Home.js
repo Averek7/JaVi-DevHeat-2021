@@ -1,9 +1,23 @@
 import React from "react";
 import Caro from "./Caro";
+import { motion } from "framer-motion";
+
+const pageTransition = {
+  in: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
+  out: {
+    opacity: 0,
+    y: -100,
+    scale: 0.5,
+  },
+};
 
 const Home = () => {
   return (
-    <>
+    <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
       <Caro />
       <div className="scroll-page">
         <br />
@@ -91,7 +105,7 @@ const Home = () => {
         </div>
       </div> */}
       </div>
-    </>
+    </motion.div>
   );
 };
 

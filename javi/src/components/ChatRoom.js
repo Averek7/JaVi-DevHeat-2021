@@ -3,8 +3,27 @@ import db, { auth } from "../firebase";
 import SendMsg from "./SendMsg";
 import "../css/Chat.css";
 import { Container } from "react-bootstrap";
+import { motion } from "framer-motion";
+
+const pageTransition = {
+  in: {
+    opacity: 1,
+    y: 0,
+  },
+  out: {
+    opacity: 0,
+    y: -100,
+  },
+};
 
 const ChatRoom = () => {
+  <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+    reprehenderit consequatur quis natus dolorum perspiciatis, saepe ratione
+    perferendis, a quos libero dolore similique soluta voluptates consequuntur,
+    nam omnis. Voluptatum ad nam accusantium porro harum!
+  </motion.div>;
+
   const scroll = useRef();
   const [messages, setMessages] = useState([]);
   useEffect(() => {
@@ -27,8 +46,13 @@ const ChatRoom = () => {
               }`}
             >
               <img src={photoURL} alt="" />
-              <p>{text} <span style={{fontSize: '12px', fontFamily: 'consolas'}}>{displayName} </span></p>
-              <p ></p>
+              <p>
+                {text}{" "}
+                <span style={{ fontSize: "12px", fontFamily: "consolas" }}>
+                  {displayName}{" "}
+                </span>
+              </p>
+              <p></p>
             </div>
           </div>
         ))}

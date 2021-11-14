@@ -4,10 +4,11 @@ html {
 
 * {
   box-sizing: border-box;
+  font-family: cursive;
 }
 
 body {
-  background-color: #bdc3c7;
+  background-color: #002233;
   color: #000000;
   font-family: cursive;
   margin: 0;
@@ -77,7 +78,7 @@ a {
 .main-footer {
   /* margin-top: 20px; */
   /* font-size: 15px; */
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
   padding-top: 15px;
   display: flex;
   justify-content: space-evenly;
@@ -136,4 +137,31 @@ a {
 
 .scroll-page li {
   margin-top: 5px;
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url("./images/lower.svg");
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.welcome-main pre {
+  margin: -200px 0;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
+.welcome-main {
+  background-color: #fa7268;
 }
