@@ -3,17 +3,18 @@ import "./App.css";
 import Home from "./components/Home";
 import MyNavbar from "./components/MyNavbar.js";
 import MyFooter from "./components/MyFooter.js";
-// import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/Contact";
 import ChatRoom from "./components/ChatRoom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Dashboard from "./components/Dashboard";
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
     <Router>
       <MyNavbar />
+      <Welcome />
       <AnimatePresence exitBeforeEnter>
         <Routes>
           <Route exact path="/home" element={<Home />} />

@@ -3,7 +3,6 @@ import React from "react";
 const MyFooter = () => {
   return (
     <>
-      <br />
       <div className="main-footer">
         <div className="our-services">
           <ul>
