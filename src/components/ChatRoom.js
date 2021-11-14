@@ -17,12 +17,12 @@ const pageTransition = {
 };
 
 const ChatRoom = () => {
-  <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-    reprehenderit consequatur quis natus dolorum perspiciatis, saepe ratione
-    perferendis, a quos libero dolore similique soluta voluptates consequuntur,
-    nam omnis. Voluptatum ad nam accusantium porro harum!
-  </motion.div>;
+  // <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
+  //   Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+  //   reprehenderit consequatur quis natus dolorum perspiciatis, saepe ratione
+  //   perferendis, a quos libero dolore similique soluta voluptates consequuntur,
+  //   nam omnis. Voluptatum ad nam accusantium porro harum!
+  // </motion.div>;
 
   const scroll = useRef();
   const [messages, setMessages] = useState([]);
@@ -34,32 +34,45 @@ const ChatRoom = () => {
         setMessages(snapshot.docs.map((doc) => doc.data()));
       });
   }, []);
+
   return (
-    <Container>
-      <div className="msgs">
-        {messages.map(({ id, text, photoURL, uid, displayName }) => (
-          <div>
-            <div
-              key={id}
-              className={`msg ${
-                uid === auth.currentUser.uid ? "sent" : "received"
-              }`}
-            >
-              <img src={photoURL} alt="" />
-              <p>
-                {text}{" "}
-                <span style={{ fontSize: "12px", fontFamily: "consolas" }}>
-                  {displayName}{" "}
-                </span>
-              </p>
-              <p></p>
-            </div>
+    <>
+      <br />
+      <h3 className="text-center m-2">Chat Area 🗣️</h3>
+      <h3
+        className="text-center"
+        style={{ fontSize: "15px", marginBottom: "15px" }}
+      >
+        (Just scroll down to bottom)
+      </h3>
+      <div className="chat-area">
+        <Container>
+          <div className="msgs">
+            {messages.map(({ id, text, photoURL, uid, displayName }) => (
+              <div>
+                <div
+                  key={id}
+                  className={`msg ${
+                    uid === auth.currentUser.uid ? "sent" : "received"
+                  }`}
+                >
+                  <img src={photoURL} alt="" />
+                  <p>
+                    {text}{" "}
+                    <span style={{ fontSize: "10px" }}>
+                      <br />
+                      {displayName}{" "}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+          <SendMsg scroll={scroll} className="send-msg-box" />
+          <div ref={scroll}></div>
+        </Container>
       </div>
-      <SendMsg scroll={scroll} />
-      <div ref={scroll}></div>
-    </Container>
+    </>
   );
 };
 
