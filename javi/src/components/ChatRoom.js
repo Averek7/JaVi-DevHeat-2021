@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import db, { auth } from "../firebase";
 import SendMsg from "./SendMsg";
 import "../css/Chat.css";
+import { Container } from "react-bootstrap";
 
 const ChatRoom = () => {
   const scroll = useRef();
@@ -15,9 +16,9 @@ const ChatRoom = () => {
       });
   }, []);
   return (
-    <>
+    <Container>
       <div className="msgs">
-        {messages.map(({ id, text, photoURL, uid }) => (
+        {messages.map(({ id, text, photoURL, uid, displayName }) => (
           <div>
             <div
               key={id}
@@ -26,14 +27,15 @@ const ChatRoom = () => {
               }`}
             >
               <img src={photoURL} alt="" />
-              <p>{text}</p>
+              <p>{text} <span style={{fontSize: '12px', fontFamily: 'consolas'}}>{displayName} </span></p>
+              <p ></p>
             </div>
           </div>
         ))}
       </div>
       <SendMsg scroll={scroll} />
       <div ref={scroll}></div>
-    </>
+    </Container>
   );
 };
 

@@ -30,6 +30,7 @@ const MyNavbar = () => {
       auth
         .signInWithPopup(provider)
         .then((result) => {
+          console.log(result);
           setUser(result.user);
         })
         .catch((error) => {
