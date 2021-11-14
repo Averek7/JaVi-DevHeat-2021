@@ -20,7 +20,6 @@ const Home = () => {
     <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
       <Caro />
       <div className="scroll-page">
-        <br />
         <div className="block-1 block">
           <div className="block-description">
             <h4>

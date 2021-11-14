@@ -35,7 +35,7 @@ const ChatRoom = () => {
       });
   }, []);
   return (
-    <Container>
+    <Container className="chatArea">
       <div className="msgs">
         {messages.map(({ id, text, photoURL, uid, displayName }) => (
           <div>

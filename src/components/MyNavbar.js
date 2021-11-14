@@ -67,7 +67,6 @@ const MyNavbar = () => {
           whileTap={{ scale: 0.9 }}
         >
           <Navbar.Brand
-            href="/home"
             style={{
               fontSize: "32px",
               fontWeight: "bold",
@@ -108,16 +107,15 @@ const MyNavbar = () => {
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home/dashboard">
-                Dashboard
-              </Nav.Link>
-              <Nav.Link as={Link} to="/home/chatroom">
+              <Nav.Link as={Link} to="/chatroom">
                 Chat Room
               </Nav.Link>
-              <Nav.Link as={Link} to="/home/contact">
+              <Nav.Link as={Link} to="/dashboard">
+                Dashboard
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contact">
                 Contact Us
               </Nav.Link>
-              {/* <Nav.Link as={Link} to="/home/about">About Us</Nav.Link> */}
             </Nav>
             <Nav>
               <>
