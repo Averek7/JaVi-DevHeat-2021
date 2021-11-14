@@ -1,2 +1,0 @@
-# JaVi
-Health is Wealth
