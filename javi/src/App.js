@@ -7,15 +7,18 @@ import MyFooter from "./components/MyFooter.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/Contact";
 import ChatRoom from "./components/ChatRoom";
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   return (
     <Router>
       <MyNavbar />
       <Routes>
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/home/contact" element={<Contact />} />
-        <Route exact path="/home/chatroom" element={<ChatRoom />} />
+        <AnimatePresence>
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/home/contact" element={<Contact />} />
+          <Route exact path="/home/chatroom" element={<ChatRoom />} />
+        </AnimatePresence>
       </Routes>
       <MyFooter />
     </Router>
