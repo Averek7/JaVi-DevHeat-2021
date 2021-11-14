@@ -9,6 +9,7 @@ import {
   setUserLoginDetails,
   setSignOutState,
 } from "../feature/userSch";
+import { motion } from "framer-motion";
 
 const MyNavbar = () => {
   const dispatch = useDispatch();
@@ -58,42 +59,64 @@ const MyNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand
-          href="/home"
-          style={{
-            fontSize: "32px",
-            fontWeight: "bold",
-            fontFamily: "monospace",
-            padding: "5px 15px",
-            margin: "-5px",
-            background: "purple",
-            marginRight: "10px",
-            borderRadius: "20px 50px",
-          }}
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: -100, right: 100 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
-          <i class="fas fa-heartbeat fa-fw"></i>
-          FIT-HUB
-        </Navbar.Brand>
+          <Navbar.Brand
+            href="/home"
+            style={{
+              fontSize: "32px",
+              fontWeight: "bold",
+              fontFamily: "monospace",
+              padding: "5px 15px",
+              margin: "-5px",
+              background: "purple",
+              marginRight: "10px",
+              borderRadius: "20px 50px",
+            }}
+            as={Link}
+            to="/home"
+          >
+            <i class="fas fa-heartbeat fa-fw"></i>
+            FIT-HUB
+          </Navbar.Brand>
+        </motion.div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {!userName ? (
-          <div className="login-btn">
-            <Nav.Link
-              onClick={handleAuth}
-              style={{
-                color: "white",
-              }}
-            >
-              <i class="far fa-user" style={{ paddingRight: "5px" }}></i>
-              LOGIN
-            </Nav.Link>
-          </div>
+          <motion.div
+            drag="x"
+            dragConstraints={{ left: -100, right: 100 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <div className="login-btn">
+              <Nav.Link
+                onClick={handleAuth}
+                style={{
+                  color: "white",
+                }}
+              >
+                <i class="far fa-user" style={{ paddingRight: "5px" }}></i>
+                LOGIN
+              </Nav.Link>
+            </div>
+          </motion.div>
         ) : (
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home/dashboard">Dashboard</Nav.Link>
-              <Nav.Link as={Link} to="/home/chatroom">Chat Room</Nav.Link>
-              <Nav.Link as={Link} to="/home/contact">Contact Us</Nav.Link>
-              <Nav.Link as={Link} to="/home/about">About Us</Nav.Link>
+              <Nav.Link as={Link} to="/home/dashboard">
+                Dashboard
+              </Nav.Link>
+              <Nav.Link as={Link} to="/home/chatroom">
+                Chat Room
+              </Nav.Link>
+              <Nav.Link as={Link} to="/home/contact">
+                Contact Us
+              </Nav.Link>
+              {/* <Nav.Link as={Link} to="/home/about">About Us</Nav.Link> */}
             </Nav>
             <Nav>
               <>
@@ -106,16 +129,23 @@ const MyNavbar = () => {
                   />
                   <Badge bg="success">{userName}</Badge>
                 </div>
-                <div className="logout-btn">
-                  <Nav.Link
-                    onClick={handleAuth}
-                    style={{
-                      color: "white",
-                    }}
-                  >
-                    LOGOUT <i class="fa-fw fas fa-sign-out-alt"></i>
-                  </Nav.Link>
-                </div>
+                <motion.div
+                  drag="x"
+                  dragConstraints={{ left: -100, right: 100 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <div className="logout-btn">
+                    <Nav.Link
+                      onClick={handleAuth}
+                      style={{
+                        color: "white",
+                      }}
+                    >
+                      LOGOUT <i class="fa-fw fas fa-sign-out-alt"></i>
+                    </Nav.Link>
+                  </div>
+                </motion.div>
               </>
             </Nav>
           </Navbar.Collapse>
