@@ -8,18 +8,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/Contact";
 import ChatRoom from "./components/ChatRoom";
 import { AnimatePresence, motion } from "framer-motion";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <Router>
       <MyNavbar />
-      <Routes>
-        <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
+        <Routes>
           <Route exact path="/home" element={<Home />} />
-          <Route exact path="/home/contact" element={<Contact />} />
+          <Route exact path="/home/dashboard" element={<Dashboard />} />
           <Route exact path="/home/chatroom" element={<ChatRoom />} />
-        </AnimatePresence>
-      </Routes>
+          <Route exact path="/home/contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
       <MyFooter />
     </Router>
   );
